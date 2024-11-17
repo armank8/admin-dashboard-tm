@@ -34,7 +34,7 @@ export default function RootLayout({
         {/* Content */}
         <div className="flex">
 
-          <div className=" hidden md:block h-[100vh]">
+          <div className="hidden md:block h-[100vh] w-[350px]">
             <Sidebar></Sidebar>
           </div>
 
