@@ -4,6 +4,7 @@ import BackButton from "@/components/BackButton";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useParams } from "next/navigation";
 import {
   Form,
   FormControl,
@@ -40,7 +41,8 @@ interface PostEditPageProps {
   };
 }
 
-const PostEditPage = ({ params }: PostEditPageProps) => {
+const PostEditPage = () => {
+  const params= useParams();
   const post = posts.find((post) => post.id === params.id);
   //   console.log(post);
   const form = useForm<z.infer<typeof formSchema>>({
