@@ -5,7 +5,7 @@ import PostsPagination from "@/components/posts/PostsPagination";
 const PostsPage = () => {
     return ( <div>
         <BackButton text='Go Back' link='/'></BackButton>
-        <PostsTable></PostsTable>
+        <PostsTable limit={6}></PostsTable>
         <PostsPagination></PostsPagination>
     </div> );
 }
