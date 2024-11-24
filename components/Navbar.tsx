@@ -10,6 +10,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import dynamic from "next/dynamic";
+
+import ThemeToggler from "@/components/ThemeToggler";
 
 const Navbar = () => {
   return (
@@ -18,29 +21,35 @@ const Navbar = () => {
         <Image src={logo} alt="TraversyPress" width={40}></Image>
       </Link>
 
-      <DropdownMenu>
-        <DropdownMenuTrigger className="focus:outline-none">
-          <Avatar>
-            <AvatarImage
-              src="https://github.com/shadcn.png"
-              alt="@shadcn"
-            ></AvatarImage>
-            <AvatarFallback className="text-black">Img</AvatarFallback>
-          </Avatar>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>
-            <Link href="/profile">Profile</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link href="/auth">Logout</Link>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <div className="flex items-center">
+        <ThemeToggler></ThemeToggler>
+        {/* Dropdown menu from avatar */}
+        <DropdownMenu>
+          <DropdownMenuTrigger className="focus:outline-none">
+            <Avatar>
+              <AvatarImage
+                src="https://github.com/shadcn.png"
+                alt="@shadcn"
+              ></AvatarImage>
+              <AvatarFallback className="text-black">Img</AvatarFallback>
+            </Avatar>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <Link href="/profile">Profile</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href="/auth">Logout</Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </div>
   );
 };
 
 export default Navbar;
+// export default dynamic (() => Promise.resolve(Navbar), {ssr: false})
+
