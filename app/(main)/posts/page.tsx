@@ -1,5 +1,5 @@
 import PostsTable from "@/components/posts/PostsTable";
-import BackButton from "@/components/BackButton";
+import BackButton from "@/components/Shared/BackButton";
 import PostsPagination from "@/components/posts/PostsPagination";
 
 const PostsPage = () => {

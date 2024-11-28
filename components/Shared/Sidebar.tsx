@@ -17,6 +17,8 @@ import {
   CreditCard,
   Settings,
   User,
+  StickyNote,
+  StickyNoteIcon,
 } from "lucide-react";
 
 import Link from "next/link";
@@ -35,6 +37,10 @@ const Sidebar = () => {
           <CommandItem>
             <Newspaper className="mr-2 h-4 w-4"></Newspaper>
             <Link href="/posts">Posts</Link>
+          </CommandItem>
+          <CommandItem>
+            <StickyNoteIcon className="mr-2 h-4 w-4"></StickyNoteIcon>
+            <Link href="/create-post">Create Post</Link>
           </CommandItem>
           <CommandItem>
             <Folders className="mr-2 h-4 w-4"></Folders>
