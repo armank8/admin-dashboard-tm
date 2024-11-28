@@ -5,6 +5,7 @@ export interface Post {
   author: string;
   date: string;
   comments: PostComment[];
+  test?: string;
 }
 
 export interface PostComment {
